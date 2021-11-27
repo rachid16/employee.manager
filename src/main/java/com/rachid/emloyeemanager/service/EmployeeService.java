@@ -5,6 +5,7 @@ import com.rachid.emloyeemanager.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -16,5 +17,17 @@ public class EmployeeService {
     public Employee addEmployee(Employee employee){
         employee.setEmployeeCode(UUID.randomUUID().toString());
         return employeeRepo.save(employee);
+    }
+
+    public List<Employee> findAllEmployee(){
+        return employeeRepo.findAll();
+    }
+
+    public Employee updateEmplouyee(Employee employee){
+        return employeeRepo.save(employee);
+    }
+
+    public void deleteEmployee(Employee employee){
+        employeeRepo.delete(employee);
     }
 }
