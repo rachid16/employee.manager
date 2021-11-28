@@ -23,11 +23,19 @@ public class EmployeeService {
         return employeeRepo.findAll();
     }
 
-    public Employee updateEmplouyee(Employee employee){
+    public Employee findEmployeeById(Long id){
+        return employeeRepo.getById(id);
+    }
+
+    public Employee updateEmployee(Employee employee){
         return employeeRepo.save(employee);
     }
 
     public void deleteEmployee(Employee employee){
         employeeRepo.delete(employee);
+    }
+
+    public void deleteEmployeeById(Long id){
+        employeeRepo.deleteById(id);
     }
 }
